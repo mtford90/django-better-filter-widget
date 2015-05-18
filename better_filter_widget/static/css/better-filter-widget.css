@@ -1,5 +1,5 @@
 .bfw {
-    font-size: 14px;
+    font-size: 11px;
     float: left;
 }
 
@@ -12,16 +12,17 @@
     width: 220px;
     font-size: 1.1em;
     color: #888;
-    font-weight: bold;
     text-transform: capitalize;
 }
 
 .bfw input.item-filter {
     display: block;
     width: 200px;
-    font-size: 1.5em;
-    height: 40px;
+    margin-top: 5px;
+    font-size: 12px;
+    height: 30px;
     padding: 0 10px;
+    font-weight: normal;
     background: #eee;
     border-radius: 0;
     margin-bottom: 0;
@@ -38,19 +39,22 @@
 
 .bfw .selected-items {
     position: relative;
-    top: -40px;
+    top: -30px;
     height: 225px;
 }
 
 .bfw .item-list {
     float: left;
-    font-size: 1.5em;
+    font-size: 12px;
     margin-right: 20px;
 }
 
 .bfw .item-list .item {
     display: block;
-    padding: 5px 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
 }
@@ -59,8 +63,12 @@
     display: none;
 }
 
+.bfw .item-list.available-items {
+    margin-top: 5px;
+}
+
 .bfw .item-list.available-items .item:active {
-    background: lightgreen;
+    background: #0b9912;
 }
 
 .bfw .item-list .glyphicon {
@@ -80,7 +88,7 @@
 }
 
 .bfw .action-icon-plus {
-    color: lightgreen;
+    color: #0b9912;
 }
 
 .bfw .action-icon-minus {
