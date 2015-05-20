@@ -11,6 +11,7 @@ class BetterFilterWidget(forms.SelectMultiple):
         js = ('js/better-filter-widget.js', )
 
     def render(self, name, value, attrs=None, choices=()):
+
         output = super(BetterFilterWidget, self).render(name, value, attrs, choices)
         output += u'''
         	<script type="text/javascript">

@@ -1,6 +1,5 @@
 .bfw {
     font-size: 11px;
-    float: left;
 }
 
 .bfw * {
@@ -8,7 +7,6 @@
 }
 
 .bfw .title {
-    float: left;
     width: 220px;
     font-size: 1.1em;
     color: #888;
@@ -30,7 +28,6 @@
 
 .bfw .item-list {
     overflow: auto;
-    float: left;
     width: 200px;
     height: 185px;
     font-size: 1.5em;
@@ -38,13 +35,10 @@
 }
 
 .bfw .selected-items {
-    position: relative;
-    top: -30px;
     height: 225px;
 }
 
 .bfw .item-list {
-    float: left;
     font-size: 12px;
     margin-right: 20px;
 }
@@ -65,6 +59,7 @@
 
 .bfw .item-list.available-items {
     margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .bfw .item-list.available-items .item:active {
@@ -75,6 +70,14 @@
     float: right;
     font-size: .9em;
     line-height: 1.5em;
+}
+
+.bfw .items-wrap {
+    float: left;
+}
+
+.grp-tbody .items-wrap {
+    float: none;
 }
 
 .bfw .action-icon {
@@ -118,3 +121,4 @@
     border-radius: 3px;
     display: none;
 }
+
