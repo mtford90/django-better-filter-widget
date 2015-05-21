@@ -23,3 +23,5 @@ class BetterFilterWidget(forms.SelectMultiple):
         	</script>
         ''' % name
         return mark_safe(output)
+
+

@@ -1,0 +1,104 @@
+.sbfw {
+    font-size: 11px;
+}
+
+.sbfw * {
+    box-sizing: border-box;
+}
+
+.sbfw .title {
+    width: 220px;
+    font-size: 1.1em;
+    color: #888;
+    text-transform: capitalize;
+}
+
+.sbfw input.item-filter {
+    display: block;
+    width: 200px;
+    margin-top: 5px;
+    font-size: 12px;
+    height: 30px;
+    padding: 0 10px;
+    font-weight: normal;
+    background: #eee;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.sbfw .item-list {
+    overflow: auto;
+    width: 200px;
+    height: 185px;
+    font-size: 1.5em;
+    border: 1px solid #ccc;
+}
+
+.sbfw .selected-items {
+    height: 225px;
+}
+
+.sbfw .item-list {
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.sbfw .item-list .item {
+    display: block;
+    padding: 5px 5px 5px 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.sbfw .item-list .item.selected {
+    background-color: red;
+}
+
+.sbfw .item-list.available-items {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+
+.sbfw .item-list .glyphicon {
+    float: right;
+    font-size: .9em;
+    line-height: 1.5em;
+}
+
+.sbfw .items-wrap {
+    float: left;
+}
+
+.grp-tbody .items-wrap {
+    float: none;
+}
+
+.sbfw .action-icon {
+    float: right;
+    border-radius: 30px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: white;
+    text-align: center;
+}
+
+.sbfw .action-icon-plus {
+    color: #0b9912;
+}
+
+.sbfw .action-icon-minus {
+    color: pink;
+}
+
+.sbfw .item-list.selected-items {
+    height: auto;
+    overflow: visible;
+}
+
+.sbfw .item-list.selected-items .item:active {
+    background: pink;
+    color: white;
+}
+
