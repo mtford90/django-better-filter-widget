@@ -8,7 +8,9 @@ function BetterSelectWidget(field_name) {
     var id = item.data('id');
     orig_input.find('option[value=' + id + ']').removeAttr('selected');
     available_items.find('[data-id=' + id + ']').removeClass('selected');
-    updateSelectedDisplay();
+
+    // Doesn't trigger change event for some reason (maybe because display: none?)
+    $(orig_input).trigger('change');
   }
 
   function selectItem() {
@@ -16,9 +18,18 @@ function BetterSelectWidget(field_name) {
     var selected_id = selected_item.data('id');
     available_items.find('.selected').removeClass('selected');
     selected_item.addClass('selected');
+
+    orig_input
+      .find('option[selected="selected"]')
+      .removeAttr('selected');
+
     orig_input
       .find('option[value=' + selected_id + ']')
       .attr('selected', 'selected');
+
+
+    // Doesn't trigger change event for some reason (maybe because display: none?)
+    $(orig_input).trigger('change');
   }
 
   function clickItem() {
