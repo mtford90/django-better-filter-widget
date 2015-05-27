@@ -27,7 +27,6 @@ function BetterSelectWidget(field_name) {
       .find('option[value=' + selected_id + ']')
       .attr('selected', 'selected');
 
-
     // Doesn't trigger change event for some reason (maybe because display: none?)
     $(orig_input).trigger('change');
   }
@@ -62,17 +61,28 @@ function BetterSelectWidget(field_name) {
    * Use the original input to recreate the items.
    */
   function recreateItems() {
+
+    var selected;
+
     orig_input
       .find('option')
       .each(function (i, opt) {
         opt = $(opt);
         var $item = $('<div class="item item-available" data-id="' + opt.attr('value') + '">'
           + opt.text() + '</div>');
-        if (opt.is(':selected')) $item.addClass('selected');
+        if (opt.is(':selected')) {
+          $item.addClass('selected');
+          selected = $item[0];
+        }
         available_items.append($item);
         $item.click(clickItem);
         item_count++;
       });
+
+    // Scroll to the selected item.
+    if (selected) {
+      available_items[0].scrollTop = selected.offsetTop - 67;
+    }
   }
 
   recreateItems();
