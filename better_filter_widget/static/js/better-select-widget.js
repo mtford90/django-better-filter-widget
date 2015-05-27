@@ -27,6 +27,9 @@ function BetterSelectWidget(field_name) {
       .find('option[value=' + selected_id + ']')
       .attr('selected', 'selected');
 
+    $selected_item
+      .text(selected_item.text());
+
     // Doesn't trigger change event for some reason (maybe because display: none?)
     $(orig_input).trigger('change');
   }
@@ -43,6 +46,7 @@ function BetterSelectWidget(field_name) {
 
   $ = django.jQuery;
   var sbfw_wrap;
+  var $selected_item = $('<div class="item selected-item">Poop</div>');
   var orig_input = $('#id_' + field_name);
   var available_items = $('<div id="available_' + field_name + '" class="item-list available-items"/>');
   var filter_input = $('<input class="item-filter" type="text" placeholder="type to filter..."/>');
@@ -53,8 +57,11 @@ function BetterSelectWidget(field_name) {
   var available_items_wrap = $('<div class="available-items-wrap items-wrap"/>');
   orig_input.parent().append(sbfw_wrap);
   sbfw_wrap.addClass('sbfw');
+  available_items_wrap.append($('<div class="title title-available">Available</div>'));
   available_items_wrap.append(filter_input);
   available_items_wrap.append(available_items);
+  available_items_wrap.append($('<div class="title title-selected">Selected</div>'));
+  available_items_wrap.append($selected_item);
   sbfw_wrap.append(available_items_wrap);
 
   /**
@@ -72,6 +79,7 @@ function BetterSelectWidget(field_name) {
           + opt.text() + '</div>');
         if (opt.is(':selected')) {
           $item.addClass('selected');
+          $selected_item.text($item.text());
           selected = $item[0];
         }
         available_items.append($item);
@@ -81,7 +89,7 @@ function BetterSelectWidget(field_name) {
 
     // Scroll to the selected item.
     if (selected) {
-      available_items[0].scrollTop = selected.offsetTop - 67;
+      available_items[0].scrollTop = selected.offsetTop - 83;
     }
   }
 

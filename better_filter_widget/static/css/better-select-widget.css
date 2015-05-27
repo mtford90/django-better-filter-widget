@@ -50,6 +50,14 @@
     cursor: pointer;
 }
 
+.selected-item {
+    display: block;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid #cfcfcf;
+    border-bottom-width: 2px;
+    margin-right: 20px;
+}
+
 .sbfw .item-list .item.selected {
     background-color: #0b9912;
 }
@@ -58,7 +66,6 @@
     margin-top: 5px;
     margin-bottom: 20px;
 }
-
 
 .sbfw .item-list .glyphicon {
     float: right;
