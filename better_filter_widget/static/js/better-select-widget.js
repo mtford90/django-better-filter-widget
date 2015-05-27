@@ -1,3 +1,11 @@
+// startsWith polyfill
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function (searchString, position) {
+    position = position || 0;
+    return this.lastIndexOf(searchString, position) === position;
+  };
+}
+
 function BetterSelectWidget(field_name) {
 
   console.log('BetterSelectWidget', field_name);
@@ -113,7 +121,7 @@ function BetterSelectWidget(field_name) {
     search_timeout = setTimeout(function () {
       items.each(function (i, opt) {
         opt = $(opt);
-        var match = !opt.hasClass('selected') && opt.text().toLowerCase().indexOf(filter) > -1;
+        var match = opt.text().toLowerCase().startsWith(filter);
         opt.attr('style', 'display:' + (match ? 'block' : 'none'));
         match_count += match ? 1 : 0;
       });
